@@ -1,0 +1,23 @@
+<script>
+  const params = new URLSearchParams(location.search);
+  if (params.has('code')) {
+    const code = params.get('code');
+    params.delete('code');
+    if (params.get('state') === sessionStorage.getItem('state')) {
+      sessionStorage.removeItem('state');
+      params.delete('state');
+      location.replace(
+        '/parties/auth/github?' +
+          new URLSearchParams({
+            step: '1',
+            code,
+            uri:
+              location.origin +
+              (params.size > 0 ? '?' + params.toString() : ''),
+          }).toString(),
+      );
+    } else {
+      location.replace(location.origin);
+    }
+  }
+</script>

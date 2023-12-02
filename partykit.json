@@ -1,0 +1,38 @@
+{
+  "name": "tinyrooms",
+  "main": "src/server/MainServer.ts",
+  "parties": {
+    "auth": "src/server/AuthServer.ts",
+    "user": "src/server/UserServer.ts",
+    "rooms": "src/server/RoomsServer.ts",
+    "room": "src/server/RoomServer.ts"
+  },
+  "serve": {
+    "path": "out",
+    "build": {
+      "entry": [
+        "src/client/index.tsx",
+        "src/client/worker.ts",
+        "src/client/*.html",
+        "src/client/**/*.css",
+        "src/client/**/*.html",
+        "src/client/**/*.woff2",
+        "src/client/**/*.svg"
+      ],
+      "outdir": "out",
+      "sourcemap": false,
+      "minify": true,
+      "loader": {
+        ".css": "copy",
+        ".html": "copy",
+        ".woff2": "copy",
+        ".svg": "copy"
+      }
+    }
+  },
+  "vars": {
+    "jwtSecret": "A long secret for hashing the JWT cookie",
+    "githubClientId": "Your GitHub app Id",
+    "githubClientSecret": "Your GitHub app Id's secret"
+  }
+}

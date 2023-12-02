@@ -1,0 +1,12 @@
+{
+  "ignorePaths": ["*.tsv", "*.webp", "*.svg"],
+  "words": [
+    "httponly",
+    "linebreak",
+    "outdir",
+    "proxying",
+    "samesite",
+    "tinyrooms",
+    "tsndr"
+  ]
+}

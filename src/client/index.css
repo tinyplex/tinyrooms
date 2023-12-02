@@ -1,0 +1,318 @@
+@font-face {
+  font-family: Inter;
+  src: url(/inter.woff2) format('woff2');
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  font-family: Inter;
+  font-size: inherit;
+  color: #445;
+  user-select: none;
+}
+
+html {
+  font-size: 1rem;
+}
+
+input,
+button {
+  background: #fff;
+  box-shadow: 0 0rem 0.15rem 0 #0000001a;
+  border: 1px solid #eee;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  &:hover,
+  &.default,
+  &.current {
+    background-color: #e9e9e9;
+    border-color: #ccc;
+  }
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
+    &:hover {
+      background-color: #fff;
+      border-color: #eee;
+    }
+  }
+}
+
+p {
+  font-size: 0.8rem;
+  margin: 1rem;
+  text-align: center;
+  color: #667;
+}
+
+hr {
+  margin: 1rem 0;
+  border: solid #eee;
+  border-width: 1px 0 0 0;
+  width: 100%;
+}
+
+#app,
+#warning {
+  align-items: stretch;
+  background: #fff;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  width: 100vw;
+}
+#app {
+  display: none;
+}
+#warning {
+  display: flex;
+  text-align: center;
+}
+
+@media only screen and (min-width: 48rem) {
+  #app {
+    display: flex;
+  }
+  #warning {
+    display: none;
+  }
+}
+
+#header {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0rem 0.3rem 0 #0000001a;
+  border: 1px solid #eee;
+  padding: 1rem;
+  z-index: 1;
+}
+
+#logo {
+  & img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    display: inline-block;
+    border: 1px solid #eee;
+    box-shadow: 0 0rem 0.15rem 0 rgba(0, 0, 0, 0.1);
+    vertical-align: top;
+    margin: 0 0.5rem 0 0;
+    background: #fff;
+  }
+  & h1 {
+    line-height: 3rem;
+    display: inline-block;
+    font-size: 2rem;
+  }
+  & a {
+    padding: 0.25rem;
+    width: 1rem;
+    height: 1rem;
+    border: 0;
+    display: inline-block;
+    vertical-align: top;
+    &:hover {
+      border-radius: 0.25rem;
+      background-color: #e9e9e9;
+    }
+  }
+}
+
+#auth > button {
+  margin-left: 1rem;
+}
+
+#main {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+#sidebar {
+  border-right: 1px solid #eee;
+  box-shadow: 0 0rem 0.3rem 0 rgba(0, 0, 0, 0.1);
+  align-self: stretch;
+  flex: 0 0 12rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background: #f9f9f9;
+  & button {
+    margin-bottom: 1rem;
+  }
+}
+
+#roomList {
+  flex: 1;
+  overflow: auto;
+  padding: 0;
+  width: 12rem;
+  & li {
+    margin-bottom: 1rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    line-height: 1rem;
+    font-weight: 400;
+    &:hover {
+      background-color: #e9e9e9;
+    }
+    &.current {
+      background-color: #d9d9d9;
+      cursor: unset;
+    }
+  }
+}
+
+#room {
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: 2rem;
+  & button {
+    max-width: 10rem;
+    margin: 0.5rem auto;
+  }
+}
+
+#roomHeader {
+  flex: 0;
+  display: flex;
+  & .roomName {
+    flex: 1;
+    display: flex;
+    & input {
+      font-weight: 600;
+      border-width: 0;
+      box-shadow: none;
+      font-size: 2rem;
+      padding: 0;
+      width: 100%;
+    }
+  }
+}
+
+#roomManage {
+  & button {
+    margin-left: 1rem;
+    width: 7rem;
+  }
+}
+
+#roomBody {
+  flex: 1;
+  margin-top: 1rem;
+  border: 1px solid #eee;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #333a;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal {
+  background: #fff;
+  box-shadow: 0 0rem 0.1rem 0 #0000001a;
+  border: 1px solid #eee;
+  border-radius: 0.25rem;
+  padding: 2rem;
+  text-align: center;
+  width: 22rem;
+  & b {
+    font-weight: 600;
+  }
+  & #buttons {
+    display: flex;
+    place-content: space-around;
+  }
+  & button.cancel {
+    display: block;
+    margin: -1rem -1rem -1rem auto;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    border: 0;
+    box-shadow: none;
+    &::before {
+      margin: 0 auto;
+    }
+  }
+}
+
+button::before,
+.local::before,
+.cloud::before {
+  margin: 0 0.5rem 0 0;
+  height: 1rem;
+  min-width: 1rem;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1rem;
+}
+.local::before {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M80-160v-120h80v-440q0-33 23.5-56.5T240-800h600v80H240v440h240v120H80Zm520 0q-17 0-28.5-11.5T560-200v-400q0-17 11.5-28.5T600-640h240q17 0 28.5 11.5T880-600v400q0 17-11.5 28.5T840-160H600Zm40-120h160v-280H640v280Zm0 0h160-160Z"/></svg>');
+}
+.cloud::before {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M792-56 686-160H260q-92 0-156-64T40-380q0-77 47.5-137T210-594q3-8 6-15.5t6-16.5L56-792l56-56 736 736-56 56ZM260-240h346L284-562q-2 11-3 21t-1 21h-20q-58 0-99 41t-41 99q0 58 41 99t99 41Zm185-161Zm419 191-58-56q17-14 25.5-32.5T840-340q0-42-29-71t-71-29h-60v-80q0-83-58.5-141.5T480-720q-27 0-52 6.5T380-693l-58-58q35-24 74.5-36.5T480-800q117 0 198.5 81.5T760-520q69 8 114.5 59.5T920-340q0 39-15 72.5T864-210ZM593-479Z"/></svg>');
+}
+.cloud.open::before {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M260-160q-91 0-155.5-63T40-377q0-78 47-139t123-78q25-92 100-149t170-57q117 0 198.5 81.5T760-520q69 8 114.5 59.5T920-340q0 75-52.5 127.5T740-160H260Zm0-80h480q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-80q0-83-58.5-141.5T480-720q-83 0-141.5 58.5T280-520h-20q-58 0-99 41t-41 99q0 58 41 99t99 41Zm220-240Z"/></svg>');
+}
+.test.alice::before {
+  content: '👩';
+}
+.test.bob::before {
+  content: '👨';
+}
+.test.carol::before {
+  content: '🧑';
+}
+.github::before {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98 96"><path d="M48 0C21 0 0 22 0 49c0 21 13 40 33 46 2 0 3 1 3-2 0-1 0-5 0-9-13 2-16-5-16-5-2-5-5-7-5-7-4-3 0-3 0 -3 4 0 7 5 7 5 4 7 11 5 14 4 0-3 1-5 3-6-10-1-22-5-22-24 0-5 1-9 5-13 0-1-2-6 0-13 0 0 4-1 13 5a46 46 0 0 1 12-1c4 0 8 0 12 1 9-6 13-5 13-5 2 6 0 11 0 13 3 3 5 7 5 13 0 18-11 23-22 24 1 1 3 4 3 9 0 6 0 11 0 13 0 1 0 2 3 2 19-6 33-24 33-46C97 22 75 0 48 0z" fill="black"/></svg>');
+}
+.login::before {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/></svg>');
+}
+.logout::before {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>');
+}
+.create::before {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>');
+}
+.join::before {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-160l0-640q117 0 198.5 81.5T760-520q69 8 114.5 59.5T920-340q0 75-52.5 127.5T740-160Zm0-80h260q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-80q0-83-58.5-141.5T480-720Zm220-240ZM280-240l-55-58 102-102h-325v-80h327l-105-100 55-58 200 200-200 200z" /></svg>');
+}
+.leave.local::before {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M80-160v-120h80v-440q0-33 23.5-56.5T240-800h600v80H240v440h240v120H80ZM680-240l-55-58 102-102h-325v-80h327l-105-100 55-58 200 200-200 200z" /></svg>');
+}
+.leave.cloud::before {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M260-160q-91 0-155.5-63T40-377q0-78 47-139t123-78q25-92 100-149t170-57v640Z m-140-80h360v-380h0L480-720q-83 0-141.5 58.5T280-520h-20q-58 0-99 41t-41 99q0 58 41 99t99 41ZM680-240l-55-58 102-102h-325v-80h327l-105-100 55-58 200 200-200 200z" /></svg>');
+}
+.public::before {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M240-640h360v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85h-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640Zm0 480h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM240-160v-400 400Z"/></svg>');
+}
+.private::before {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"/></svg>');
+}
+.what::before {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" ><path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>');
+}
+#modal button.cancel::before {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>');
+}

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strict": true,
+    "removeComments": true,
+    "module": "es2020",
+    "target": "es2020",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "types": ["@cloudflare/workers-types"],
+    "lib": ["es2020", "dom", "webworker"],
+    "skipLibCheck": true
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "tinyrooms",
+  "version": "1.0.0",
+  "author": "jamesgpearce",
+  "repository": "github:tinyplex/tinyrooms",
+  "license": "MIT",
+  "scripts": {
+    "dev": "partykit dev",
+    "deploy": "partykit deploy",
+    "lint": "./node_modules/.bin/eslint .",
+    "ts": "./node_modules/.bin/tsc -p src/tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@tsndr/cloudflare-worker-jwt": "^2.3.2",
+    "nanoid": "^5.0.4",
+    "partysocket": "^0.0.17",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tinybase": "4.5.9"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^18.2.17",
+    "@types/react": "^18.2.43",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "babel-eslint": "^10.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jest": "^27.6.0",
+    "eslint-plugin-jsdoc": "^46.9.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react": "7.33.2",
+    "eslint": "^8.55.0",
+    "partykit": "^0.0.45",
+    "typescript": "^5.3.3"
+  }
+}
