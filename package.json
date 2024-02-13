@@ -16,21 +16,19 @@
     "partysocket": "^0.0.25",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tinybase": "4.6.7"
+    "tinybase": "4.6.9"
   },
   "devDependencies": {
     "@types/react-dom": "^18.2.19",
     "@types/react": "^18.2.55",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "@typescript-eslint/parser": "^7.0.1",
     "babel-eslint": "^10.1.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-jest": "^27.6.3",
-    "eslint-plugin-jsdoc": "^48.0.6",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react": "7.33.2",
     "eslint": "^8.56.0",
-    "partykit": "^0.0.84",
+    "partykit": "^0.0.89",
     "typescript": "^5.3.3"
   }
 }
