@@ -11,24 +11,24 @@
     "ts": "./node_modules/.bin/tsc -p src/tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@tsndr/cloudflare-worker-jwt": "^2.5.2",
+    "@tsndr/cloudflare-worker-jwt": "^2.5.3",
     "nanoid": "^5.0.6",
-    "partysocket": "^1.0.0",
+    "partysocket": "^1.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tinybase": "4.6.13"
+    "tinybase": "4.7.0"
   },
   "devDependencies": {
-    "@types/react-dom": "^18.2.19",
-    "@types/react": "^18.2.61",
-    "@typescript-eslint/eslint-plugin": "^7.1.0",
-    "@typescript-eslint/parser": "^7.1.0",
+    "@types/react-dom": "^18.2.22",
+    "@types/react": "^18.2.65",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
     "babel-eslint": "^10.1.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react": "7.34.0",
     "eslint": "^8.57.0",
-    "partykit": "^0.0.97",
-    "typescript": "^5.3.3"
+    "partykit": "^0.0.99",
+    "typescript": "^5.4.2"
   }
 }
