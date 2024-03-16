@@ -16,17 +16,17 @@
     "partysocket": "^1.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tinybase": "4.7.0"
+    "tinybase": "4.7.1"
   },
   "devDependencies": {
     "@types/react-dom": "^18.2.22",
-    "@types/react": "^18.2.65",
+    "@types/react": "^18.2.66",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "babel-eslint": "^10.1.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react": "7.34.0",
+    "eslint-plugin-react": "7.34.1",
     "eslint": "^8.57.0",
     "partykit": "^0.0.99",
     "typescript": "^5.4.2"
