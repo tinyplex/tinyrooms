@@ -1,16 +1,16 @@
+import React from 'react';
+import {createStore} from 'tinybase';
+import {useCreateStore, useProvideStore} from 'tinybase/ui-react';
+import {EditableValueView} from 'tinybase/ui-react-dom';
+import {NAME_VALUE} from '../../common';
+import {usePersisters} from '../common';
 import {
   CLOUD,
   CLOUD_ROOM_STORE_PARTY,
-  RoomType,
   getRoomStoreId,
+  RoomType,
   useRoomSetStateCallback,
 } from './rooms';
-import {useCreateStore, useProvideStore} from 'tinybase/debug/ui-react';
-import {EditableValueView} from 'tinybase/debug/ui-react-dom';
-import {NAME_VALUE} from '../../common';
-import React from 'react';
-import {createStore} from 'tinybase';
-import {usePersisters} from '../common';
 
 export const RoomStore = ({
   roomType,

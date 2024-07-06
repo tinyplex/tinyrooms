@@ -1,5 +1,5 @@
-import {Provider} from 'tinybase/debug/ui-react';
 import React from 'react';
+import {Provider} from 'tinybase/ui-react';
 import {Shapes} from '../../../_shapes/Shapes';
 import {useRoomStore} from '../../../stores/rooms';
 

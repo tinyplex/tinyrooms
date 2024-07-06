@@ -1,4 +1,5 @@
 import {useCallback, useEffect} from 'react';
+import {createStore} from 'tinybase';
 import {
   useCreateStore,
   useDelValueCallback,
@@ -6,8 +7,7 @@ import {
   useSetValueCallback,
   useValue,
   useValueListener,
-} from 'tinybase/debug/ui-react';
-import {createStore} from 'tinybase';
+} from 'tinybase/ui-react';
 import {getConnection} from '../common';
 
 const UI_STORE_ID = 'ui';

@@ -1,3 +1,6 @@
+import React from 'react';
+import {useHasValues} from 'tinybase/ui-react';
+import {FORBIDDEN} from '../../../common';
 import {
   CREATING,
   LOCAL,
@@ -6,12 +9,9 @@ import {
   useRoomType,
 } from '../../../stores/rooms';
 import {useUiOnline, useUiRoomId, useUiUsername} from '../../../stores/UiStore';
-import {FORBIDDEN} from '../../../common';
-import React from 'react';
+import {RoomJoin} from '../sidebar/RoomJoin';
 import {RoomBody} from './RoomBody';
 import {RoomHeader} from './RoomHeader';
-import {RoomJoin} from '../sidebar/RoomJoin';
-import {useHasValues} from 'tinybase/debug/ui-react';
 
 export const Room = () => {
   const roomId = useUiRoomId();

@@ -1,13 +1,13 @@
-import {DRAGGED, SHAPES} from './common';
 import React, {useRef} from 'react';
+import {nanoid} from 'nanoid';
 import {
   TableView,
   useHasTable,
   useSetRowCallback,
   useValue,
-} from 'tinybase/debug/ui-react';
+} from 'tinybase/ui-react';
+import {DRAGGED, SHAPES} from './common';
 import {Shape} from './Shape';
-import {nanoid} from 'nanoid';
 
 const random = (from: number, to: number) =>
   from + Math.floor(Math.random() * (to - from));

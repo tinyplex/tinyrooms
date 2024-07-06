@@ -1,11 +1,11 @@
-import {CLOUD, LOCAL} from './stores/rooms';
-import {UiStore, useUiUsername} from './stores/UiStore';
+import React from 'react';
+import {Provider} from 'tinybase/ui-react';
+import {Inspector} from 'tinybase/ui-react-inspector';
 import {Header} from './components/header/Header';
 import {Main} from './components/main/Main';
-import {Provider} from 'tinybase/debug/ui-react';
-import React from 'react';
+import {CLOUD, LOCAL} from './stores/rooms';
 import {RoomsStore} from './stores/RoomsStore';
-import {StoreInspector} from 'tinybase/debug/ui-react-dom';
+import {UiStore, useUiUsername} from './stores/UiStore';
 import {UserStore} from './stores/UserStore';
 
 export const App = () => {
@@ -21,7 +21,7 @@ export const App = () => {
       <Main />
 
       {/* Debug */}
-      <StoreInspector />
+      <Inspector />
     </Provider>
   );
 };

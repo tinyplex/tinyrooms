@@ -1,20 +1,16 @@
+import React from 'react';
+import {createStore} from 'tinybase';
+import {useCreateStore, useProvideStore, useRowIds} from 'tinybase/ui-react';
+import {ROOMS_TABLE} from '../../common';
+import {usePersisters} from '../common';
 import {
   CLOUD,
   CLOUD_ROOMS_STORE_PARTY,
+  getRoomsStoreId,
   INITIAL_JSON_CELL,
   RoomType,
-  getRoomsStoreId,
 } from './rooms';
-import {
-  useCreateStore,
-  useProvideStore,
-  useRowIds,
-} from 'tinybase/debug/ui-react';
-import {ROOMS_TABLE} from '../../common';
-import React from 'react';
 import {RoomStore} from './RoomStore';
-import {createStore} from 'tinybase';
-import {usePersisters} from '../common';
 import {useUiUsername} from './UiStore';
 
 /**

@@ -1,13 +1,9 @@
 import React, {MouseEventHandler, useCallback} from 'react';
-import {redirect, usePersisters} from '../common';
-import {
-  useCreateStore,
-  useProvideStore,
-  useValue,
-} from 'tinybase/debug/ui-react';
-import {useUiDelUsernameCallback, useUiUsername} from './UiStore';
-import {EditableValueView} from 'tinybase/debug/ui-react-dom';
 import {createStore} from 'tinybase';
+import {useCreateStore, useProvideStore, useValue} from 'tinybase/ui-react';
+import {EditableValueView} from 'tinybase/ui-react-dom';
+import {redirect, usePersisters} from '../common';
+import {useUiDelUsernameCallback, useUiUsername} from './UiStore';
 
 const USER_STORE_ID = 'user';
 

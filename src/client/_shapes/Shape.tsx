@@ -1,11 +1,11 @@
-import {DRAGGED, SHAPES, useDraggable} from './common';
 import React, {RefObject, useCallback} from 'react';
 import {
   RowProps,
   useRow,
   useSetPartialRowCallback,
   useSetValueCallback,
-} from 'tinybase/debug/ui-react';
+} from 'tinybase/ui-react';
+import {DRAGGED, SHAPES, useDraggable} from './common';
 
 export const Shape = ({rowId}: RowProps) => {
   const {x, y, w, h, color} = useRow(SHAPES, rowId);

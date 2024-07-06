@@ -1,10 +1,16 @@
 import {
-  Request as CfRequest,
   Connection,
   ConnectionContext,
   Lobby,
   Party,
+  Request as CfRequest,
 } from 'partykit/server';
+import {Id, Value} from 'tinybase';
+import {
+  broadcastChanges,
+  TinyBasePartyKitServer,
+  TinyBasePartyKitServerConfig,
+} from 'tinybase/persisters/persister-partykit-server';
 import {
   FORBIDDEN_CODE,
   FORBIDDEN_MESSAGE,
@@ -12,13 +18,7 @@ import {
   PUBLIC,
   VISIBILITY_VALUE,
 } from '../common';
-import {Id, Value} from 'tinybase';
 import {MESSAGE_PREFIX, STORAGE_PREFIX, STORE_PATH} from '../config';
-import {
-  TinyBasePartyKitServer,
-  TinyBasePartyKitServerConfig,
-  broadcastTransactionChanges,
-} from 'tinybase/persisters/persister-partykit-server';
 import {getTokenContent, newResponse} from './common';
 
 /**
@@ -117,7 +117,7 @@ const getPolicy = async (that: RoomServer, request?: CfRequest) => {
     await that.party.storage.put(getValueStorageKey(OWNER_VALUE), username);
     owner = username;
     setTimeout(
-      () => broadcastTransactionChanges(that, [{}, {owner} as {owner: string}]),
+      () => broadcastChanges(that, [{}, {owner} as {owner: string}, 1]),
       100,
     );
   }
