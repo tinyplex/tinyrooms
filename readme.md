@@ -99,7 +99,7 @@ cd my-tinyrooms
 2. Download a copy of the head of the repo:
 
 ```sh
-npx degit tinyplex/tinyrooms
+npx tiged tinyplex/tinyrooms
 ```
 
 3. Install dependencies:
