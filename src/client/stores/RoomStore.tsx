@@ -22,11 +22,14 @@ export const RoomStore = ({
   readonly initialJson: string;
 }) => {
   const roomStoreId = getRoomStoreId(roomId);
-  const roomStore = useCreateStore(createStore);
+  const roomStore = useCreateStore(() => {
+    const store = createStore();
+    if (initialJson) {
+      store.setJson(initialJson);
+    }
+    return store;
+  }, [roomStoreId, initialJson]);
   const setRoomState = useRoomSetStateCallback(roomType, roomId);
-  if (initialJson) {
-    roomStore.setJson(initialJson);
-  }
   useProvideStore(roomStoreId, roomStore);
   usePersisters(
     roomStore,
