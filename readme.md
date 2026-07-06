@@ -82,7 +82,7 @@ serve the website's assets and the app will attempt to reconnect if you come
 back online.
 
 And finally, because the user profile is also stored in TinyBase and
-synchronized with the server, TonyRooms demonstrates some simple account
+synchronized with the server, TinyRooms demonstrates some simple account
 management against the distributed user database:
 
 ![](./docs/6.png)
